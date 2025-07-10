@@ -91,6 +91,7 @@ function mostraAlternativas(){
     for(const alternativa of perguntaAtual.alternativas) {
         const botaoAlternativas = document.createElement("button");
         botaoAlternativas.textContent = alternativa.texto;
+        botaoAlternativas.setAttribute("aria-label", alternativa.texto);
         botaoAlternativas.addEventListener("click", () => respostaSelecionada(alternativa));
         caixaAlternativas.appendChild(botaoAlternativas);
     }
@@ -116,6 +117,19 @@ function mostraResultado() {
     historia += "No fim das contas, Biu não apenas deu aula naquela semana, como viveu um capítulo que jamais esqueceria.";
     textoResultado.textContent = historia;
     caixaAlternativas.textContent = "";
+
+    // Cria botão "Jogar de novo"
+    const botaoReiniciar = document.createElement("button");
+    botaoReiniciar.textContent = "Jogar de novo";
+    botaoReiniciar.addEventListener("click", reiniciarJogo);
+    caixaAlternativas.appendChild(botaoReiniciar);
+}
+
+function reiniciarJogo() {
+    atual = 0;
+    historiaFinal = "";
+    textoResultado.textContent = "";
+    mostraPergunta();
 }
 
 mostraPergunta();
