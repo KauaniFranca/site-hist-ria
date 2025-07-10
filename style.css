@@ -1,14 +1,14 @@
 :root {
-    --cor-fundo: #000000;         /* preto total */
-    --cor-principal: #111111;     /* cinza bem escuro */
-    --cor-secundaria: #1e1e1e;    /* cinza intermediário */
-    --cor-destaque: #cc0000;      /* vermelho escuro, tom corinthiano */
-    --cor-texto: #ffffff;         /* branco puro */
+    --cor-fundo: #000000;
+    --cor-principal: #111111;
+    --cor-secundaria: #1e1e1e;
+    --cor-destaque: #cc0000;
+    --cor-texto: #ffffff;
 }
 
 body {
     background-color: var(--cor-fundo);
-    background-image: url("ig fdcorintians.jpg"); /* 💡 troque o nome pelo arquivo real */
+    background-image: url("ig-fdcorintians.jpg"); /* 👈 Sua imagem de fundo */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -20,7 +20,7 @@ body {
     min-height: 100vh;
 
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    backdrop-filter: brightness(0.8);
+    backdrop-filter: brightness(0.85);
 }
 
 .caixa-principal {
