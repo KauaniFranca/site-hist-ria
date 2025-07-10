@@ -6,11 +6,11 @@ const textoResultado = document.querySelector(".texto-resultado");
 
 const perguntas = [
     {
-        enunciado: "Professor Biu encontra um bilhete misterioso em sua mesa: 'A chave está na sala 22. Não confie em ninguém.' O que ele faz?",
+        enunciado: "Professor Buiu encontra um bilhete misterioso em sua mesa: 'A chave está na sala 22. Não confie em ninguém.' O que ele faz?",
         alternativas: [
             {
                 texto: "Vai até a sala 22 imediatamente, mesmo sendo fora do horário.",
-                afirmacao: "Biu seguiu o instinto e foi até a sala 22 ainda que a escola estivesse quase vazia."
+                afirmacao: "Buiu seguiu o instinto e foi até a sala 22 ainda que a escola estivesse quase vazia."
             },
             {
                 texto: "Mostra o bilhete para a diretora e pede orientação.",
@@ -19,7 +19,7 @@ const perguntas = [
         ]
     },
     {
-        enunciado: "Ao chegar na sala 22, encontra uma caixa trancada com uma mensagem: 'Só um verdadeiro corintiano saberá abrir.' Qual a reação do Biu?",
+        enunciado: "Ao chegar na sala 22, encontra uma caixa trancada com uma mensagem: 'Só um verdadeiro corintiano saberá abrir.' Qual a reação do Buiu?",
         alternativas: [
             {
                 texto: "Sorri e tenta usar a data do último título do Corinthians como senha.",
@@ -49,7 +49,7 @@ const perguntas = [
         alternativas: [
             {
                 texto: "Chama um ex-aluno hacker de confiança para ajudar a investigar.",
-                afirmacao: "Biu ligou pro ex-aluno Bruno, que adorava mexer com redes e sistemas antigos. Juntos, vasculharam os arquivos."
+                afirmacao: "Buiu ligou pro ex-aluno Bruno, que adorava mexer com redes e sistemas antigos. Juntos, vasculharam os arquivos."
             },
             {
                 texto: "Vai sozinho à sala de arquivos à noite.",
@@ -66,7 +66,7 @@ const perguntas = [
             },
             {
                 texto: "Continua investigando para descobrir quem está por trás do projeto.",
-                afirmacao: "Biu sabia que o buraco era mais embaixo. Continuou investigando para encontrar os culpados."
+                afirmacao: "Buiu sabia que o buraco era mais embaixo. Continuou investigando para encontrar os culpados."
             }
         ]
     },
@@ -98,27 +98,23 @@ function mostraAlternativas(){
 }
 
 function respostaSelecionada(opcaoSelecionada) {
-    const afirmacoes = opcaoSelecionada.afirmacao;
-    historiaFinal += afirmacoes + " ";
+    historiaFinal += opcaoSelecionada.afirmacao + " ";
     atual++;
     mostraPergunta();
 }
 
 function mostraResultado() {
     caixaPerguntas.textContent = "O episódio termina assim...";
-    
-    let historia = "Em uma semana comum no ensino médio, o Professor Biu viu sua rotina mudar completamente. ";
-    const partes = historiaFinal.trim().split(". ").filter(p => p.length > 0);
-    
-    partes.forEach((parte, index) => {
-        historia += (index === 0 ? "" : "Depois, ") + parte.toLowerCase() + ". ";
-    });
 
-    historia += "No fim das contas, Biu não apenas deu aula naquela semana, como viveu um capítulo que jamais esqueceria.";
+    const historia = `Em uma semana comum no ensino médio, o professor Buiu encontrou um bilhete misterioso em sua mesa que dizia: "A chave está na sala 22. Não confie em ninguém." Mesmo com a escola quase vazia, ele seguiu seu instinto e foi até a sala indicada. Ao chegar, encontrou uma caixa trancada com uma mensagem que só um verdadeiro corintiano saberia decifrar. Com seu jeito fanático pelo Corinthians, tentou usar datas dos títulos do time até ouvir o clique da tranca.
+
+Dentro da caixa, havia uma fita cassete com a etiqueta: "Ouça no rádio velho da sala dos professores." Corajosamente, Buiu foi até lá e ligou o rádio antigo, ouvindo o conteúdo intrigante da fita. A gravação falava sobre um projeto secreto escondido nos arquivos da escola. Para investigar, ele chamou um ex-aluno hacker de confiança, o Bruno, e juntos vasculharam documentos antigos.
+
+Entre esses papéis, encontraram um dossiê intitulado "Projeto VAR - Vantagem Absoluta de Rendimento". Percebendo a gravidade da situação, Buiu decidiu continuar a investigação para descobrir quem estava por trás desse projeto. Durante essa semana intensa, sua rotina mudou completamente, e ele viveu um capítulo que jamais esqueceria.`;
+
     textoResultado.textContent = historia;
     caixaAlternativas.textContent = "";
 
-    // Cria botão "Jogar de novo"
     const botaoReiniciar = document.createElement("button");
     botaoReiniciar.textContent = "Jogar de novo";
     botaoReiniciar.addEventListener("click", reiniciarJogo);
