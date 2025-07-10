@@ -7,7 +7,7 @@
 }
 
 body {
-    background-color: var(--cor-fundo);
+    
     background-image: url("fdcorintians.jpg"); /* 👈 imagem local na mesma pasta */
     background-size: cover;
     background-position: center;
