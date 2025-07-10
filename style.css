@@ -5,10 +5,9 @@
     --cor-destaque: #cc0000;
     --cor-texto: #ffffff;
 }
-
 body {
-    
-    background-image: url("fdcorintians.jpg"); /* 👈 imagem local na mesma pasta */
+    background-color: var(--cor-fundo);
+    background-image: url("fdcorintians.jpg"); /* imagem local */
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -22,6 +21,7 @@ body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     backdrop-filter: brightness(0.85);
 }
+
 
 .caixa-principal {
     background-color: rgba(0, 0, 0, 0.8);
